@@ -1,7 +1,7 @@
 ﻿
 namespace SuperheroMemoryGame_1_
 {
-    partial class hardLevel
+    partial class HardLevel
     {
         /// <summary>
         /// Required designer variable.
@@ -51,6 +51,12 @@ namespace SuperheroMemoryGame_1_
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
@@ -76,9 +82,10 @@ namespace SuperheroMemoryGame_1_
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(232, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 23;
             this.label1.Text = "00:00";
             // 
@@ -91,7 +98,7 @@ namespace SuperheroMemoryGame_1_
             this.button1.TabIndex = 24;
             this.button1.Text = "Start ";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.startGame);
+            this.button1.Click += new System.EventHandler(this.StartGame);
             // 
             // pictureBox17
             // 
@@ -101,7 +108,7 @@ namespace SuperheroMemoryGame_1_
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox17.TabIndex = 22;
             this.pictureBox17.TabStop = false;
-            this.pictureBox17.Click += new System.EventHandler(this.clickImage);
+            this.pictureBox17.Click += new System.EventHandler(this.ClickImage);
             // 
             // pictureBox18
             // 
@@ -111,7 +118,7 @@ namespace SuperheroMemoryGame_1_
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox18.TabIndex = 21;
             this.pictureBox18.TabStop = false;
-            this.pictureBox18.Click += new System.EventHandler(this.clickImage);
+            this.pictureBox18.Click += new System.EventHandler(this.ClickImage);
             // 
             // pictureBox19
             // 
@@ -121,7 +128,7 @@ namespace SuperheroMemoryGame_1_
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox19.TabIndex = 20;
             this.pictureBox19.TabStop = false;
-            this.pictureBox19.Click += new System.EventHandler(this.clickImage);
+            this.pictureBox19.Click += new System.EventHandler(this.ClickImage);
             // 
             // pictureBox20
             // 
@@ -131,7 +138,7 @@ namespace SuperheroMemoryGame_1_
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox20.TabIndex = 19;
             this.pictureBox20.TabStop = false;
-            this.pictureBox20.Click += new System.EventHandler(this.clickImage);
+            this.pictureBox20.Click += new System.EventHandler(this.ClickImage);
             // 
             // pictureBox9
             // 
@@ -141,7 +148,7 @@ namespace SuperheroMemoryGame_1_
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 18;
             this.pictureBox9.TabStop = false;
-            this.pictureBox9.Click += new System.EventHandler(this.clickImage);
+            this.pictureBox9.Click += new System.EventHandler(this.ClickImage);
             // 
             // pictureBox10
             // 
@@ -151,7 +158,7 @@ namespace SuperheroMemoryGame_1_
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 17;
             this.pictureBox10.TabStop = false;
-            this.pictureBox10.Click += new System.EventHandler(this.clickImage);
+            this.pictureBox10.Click += new System.EventHandler(this.ClickImage);
             // 
             // pictureBox11
             // 
@@ -161,7 +168,7 @@ namespace SuperheroMemoryGame_1_
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox11.TabIndex = 16;
             this.pictureBox11.TabStop = false;
-            this.pictureBox11.Click += new System.EventHandler(this.clickImage);
+            this.pictureBox11.Click += new System.EventHandler(this.ClickImage);
             // 
             // pictureBox12
             // 
@@ -171,7 +178,7 @@ namespace SuperheroMemoryGame_1_
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox12.TabIndex = 15;
             this.pictureBox12.TabStop = false;
-            this.pictureBox12.Click += new System.EventHandler(this.clickImage);
+            this.pictureBox12.Click += new System.EventHandler(this.ClickImage);
             // 
             // pictureBox13
             // 
@@ -181,7 +188,7 @@ namespace SuperheroMemoryGame_1_
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox13.TabIndex = 14;
             this.pictureBox13.TabStop = false;
-            this.pictureBox13.Click += new System.EventHandler(this.clickImage);
+            this.pictureBox13.Click += new System.EventHandler(this.ClickImage);
             // 
             // pictureBox14
             // 
@@ -191,7 +198,7 @@ namespace SuperheroMemoryGame_1_
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox14.TabIndex = 13;
             this.pictureBox14.TabStop = false;
-            this.pictureBox14.Click += new System.EventHandler(this.clickImage);
+            this.pictureBox14.Click += new System.EventHandler(this.ClickImage);
             // 
             // pictureBox15
             // 
@@ -201,7 +208,7 @@ namespace SuperheroMemoryGame_1_
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox15.TabIndex = 12;
             this.pictureBox15.TabStop = false;
-            this.pictureBox15.Click += new System.EventHandler(this.clickImage);
+            this.pictureBox15.Click += new System.EventHandler(this.ClickImage);
             // 
             // pictureBox16
             // 
@@ -211,7 +218,7 @@ namespace SuperheroMemoryGame_1_
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox16.TabIndex = 11;
             this.pictureBox16.TabStop = false;
-            this.pictureBox16.Click += new System.EventHandler(this.clickImage);
+            this.pictureBox16.Click += new System.EventHandler(this.ClickImage);
             // 
             // pictureBox5
             // 
@@ -221,7 +228,7 @@ namespace SuperheroMemoryGame_1_
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 10;
             this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.clickImage);
+            this.pictureBox5.Click += new System.EventHandler(this.ClickImage);
             // 
             // pictureBox6
             // 
@@ -231,7 +238,7 @@ namespace SuperheroMemoryGame_1_
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 9;
             this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.clickImage);
+            this.pictureBox6.Click += new System.EventHandler(this.ClickImage);
             // 
             // pictureBox7
             // 
@@ -241,7 +248,7 @@ namespace SuperheroMemoryGame_1_
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 8;
             this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.clickImage);
+            this.pictureBox7.Click += new System.EventHandler(this.ClickImage);
             // 
             // pictureBox8
             // 
@@ -251,7 +258,7 @@ namespace SuperheroMemoryGame_1_
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 7;
             this.pictureBox8.TabStop = false;
-            this.pictureBox8.Click += new System.EventHandler(this.clickImage);
+            this.pictureBox8.Click += new System.EventHandler(this.ClickImage);
             // 
             // pictureBox3
             // 
@@ -261,7 +268,7 @@ namespace SuperheroMemoryGame_1_
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.clickImage);
+            this.pictureBox3.Click += new System.EventHandler(this.ClickImage);
             // 
             // pictureBox4
             // 
@@ -271,7 +278,7 @@ namespace SuperheroMemoryGame_1_
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 5;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.clickImage);
+            this.pictureBox4.Click += new System.EventHandler(this.ClickImage);
             // 
             // pictureBox2
             // 
@@ -281,7 +288,7 @@ namespace SuperheroMemoryGame_1_
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.clickImage);
+            this.pictureBox2.Click += new System.EventHandler(this.ClickImage);
             // 
             // pictureBox1
             // 
@@ -291,13 +298,73 @@ namespace SuperheroMemoryGame_1_
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.clickImage);
+            this.pictureBox1.Click += new System.EventHandler(this.ClickImage);
             // 
-            // hardLevel
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(822, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(822, 142);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(822, 99);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "label4";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(744, 62);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 13);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Guess Count:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(707, 99);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(108, 13);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Correct Guess Count:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(760, 142);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 13);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "Accuracy:";
+            // 
+            // HardLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(897, 572);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox17);
@@ -320,8 +387,8 @@ namespace SuperheroMemoryGame_1_
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "hardLevel";
-            this.Text = "Level02";
+            this.Name = "HardLevel";
+            this.Text = "Level03";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
@@ -371,5 +438,11 @@ namespace SuperheroMemoryGame_1_
         private System.Windows.Forms.PictureBox pictureBox20;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

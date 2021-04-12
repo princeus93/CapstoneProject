@@ -11,47 +11,54 @@ using System.Globalization;
 
 namespace SuperheroMemoryGame_1_
 {
-    public partial class mediumLevel : Form
+    public partial class EasyLevel : Form
     {
-        public mediumLevel()
+        public EasyLevel()
         {
             InitializeComponent();
         }
 
         bool allowClick = false;
         PictureBox firstGuess;
-        Random rnd = new Random();
-        Timer clickTimer = new Timer();
+        readonly Random rnd = new Random();
+        readonly Timer clickTimer = new Timer();
         int time = 60;
-        Timer timer = new Timer { Interval = 1000 };
+        readonly Timer timer = new Timer { Interval = 1000 };
         double guessCount = 0;
         double correctGuessCount = 0;
 
-        private PictureBox[] pictureBoxes
+        private PictureBox[] PictureBoxes
         {
             get { return Controls.OfType<PictureBox>().ToArray(); }
         }
 
-        private static IEnumerable<Image> images
+
+
+        private static IEnumerable<Image> Images
         {
             get
             {
                 return new Image[]
                 {
-                    Properties.Resources.imgBatman,
+
+                    Properties.Resources.CaptainAmericaNew,
+                    Properties.Resources.AntManNew,
+                    Properties.Resources.BlackPantherNew,
+                    Properties.Resources.ArrowNew,
+                    Properties.Resources.VisionNew,
+                    Properties.Resources.IronmanNew
+                   /* Properties.Resources.imgBatman,
                     Properties.Resources.imgCaptainAmerica,
                     Properties.Resources.imgFlash,
                     Properties.Resources.imgGreenLantern,
                     Properties.Resources.imgIronMan,
-                    Properties.Resources.imgRobin,
-                    Properties.Resources.imgSpiderman,
-                    Properties.Resources.imgSuperman,
-
+                    Properties.Resources.imgRobin */
                 };
             }
         }
+
         //Game timer function
-        private void startGameTimer()
+        private void StartGameTimer()
         {
             timer.Start();
             timer.Tick += delegate
@@ -60,7 +67,8 @@ namespace SuperheroMemoryGame_1_
                 if (time < 0)
                 {
                     timer.Stop();
-                    MessageBox.Show("Out of time");
+                    MessageBoxEndGame();
+                    //MessageBox.Show("Out of time");
                     ResetImages();
                 }
 
@@ -69,54 +77,51 @@ namespace SuperheroMemoryGame_1_
                 label1.Text = "00: " + time.ToString();
             };
         }
-        /// <summary>
-        /// Calculate accuracy of cards pick correctly. We will
-        /// need the number of picks picked over-all and picks picked correctly.
-        /// </summary>
-       
 
-        
-        
         private void ResetImages()
         {
-            foreach(var pic in pictureBoxes)
+            foreach (var pic in PictureBoxes)
             {
                 pic.Tag = null;
                 pic.Visible = true;
             }
             HideImages();
-            setRandomImages();
+            SetRandomImages();
             time = 60;
             timer.Start();
+
         }
 
         private void HideImages()
         {
-            foreach(var pic in pictureBoxes)
+            foreach (var pic in PictureBoxes)
             {
                 pic.Image = Properties.Resources.imgQuestionMark;
             }
         }
-        
-        private PictureBox getFreeSlot()
+
+        private PictureBox GetFreeSlot()
         {
             int num;
 
             do
             {
-                num = rnd.Next(0, pictureBoxes.Count());
+                num = rnd.Next(0, PictureBoxes.Count());
             }
-            while (pictureBoxes[num].Tag != null);
-            return pictureBoxes[num];
+            while (PictureBoxes[num].Tag != null);
+            return PictureBoxes[num];
         }
 
-        private void setRandomImages()
+        private void SetRandomImages()
         {
-            foreach(var image in images)
+            //do
+            // {
+            foreach (var image in Images)
             {
-                getFreeSlot().Tag = image;
-                getFreeSlot().Tag = image;
+                GetFreeSlot().Tag = image;
+                GetFreeSlot().Tag = image;
             }
+            // while (getFreeSlot().Tag == null);   
         }
 
         private void CLICKTIMER_TICK(object sender, EventArgs e)
@@ -127,9 +132,10 @@ namespace SuperheroMemoryGame_1_
             clickTimer.Stop();
         }
 
-
+        //endgame textbox
         private void MessageBoxEndGame()
         {
+
             string message = "Do you want to play again?";
             string title = "Game Over";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -142,20 +148,36 @@ namespace SuperheroMemoryGame_1_
             {
 
                 EasyLevel.ActiveForm.Close();
-                new mainMenu().Show();
+                new MainMenu().Show();
             }
         }
 
-        public void displayGuessCount() { guessCountText.Text = guessCount.ToString(); }
+        public void DisplayGuessCount()
+        {
+            double cGCount = correctGuessCount;
+            double gCount = guessCount;
+            if (gCount % 2 == 0)
+            {
+                // gCount =  gCount / 2;
+                label2.Text = ((gCount/2)-cGCount).ToString();
+            }
+            else
+            {
+                return;
+            }
+            // label2.Text = guessCount.ToString(); 
+        }
 
-        private void displayAccuracy()
+        private void DisplayAccuracy()
         {
             // NumberFormatInfo nfi = new CultureInfo("en-US", false).NumberFormat;
             double cGCount = correctGuessCount;
-            double gCount = guessCount;
+            double gCount = guessCount / 2;
 
             double accuracyOfPicks;
-            
+
+            //totalPicks = guessCount;
+            // correctPicks = correctGuessCount;
             if (cGCount < 1 || gCount < 1)
             {
                 accuracyOfPicks = 0;
@@ -164,18 +186,17 @@ namespace SuperheroMemoryGame_1_
             {
                 accuracyOfPicks = cGCount / gCount;
             }
-            accuracyText.Text = accuracyOfPicks.ToString("P", CultureInfo.InvariantCulture);
-            
+            label3.Text = accuracyOfPicks.ToString("P", CultureInfo.InvariantCulture);
+            //return accuracyOfPicks;
         }
 
-        private void clickImage(object sender, EventArgs e)
+        private void ClickImage(object sender, EventArgs e)
         {
             if (!allowClick) return;
             guessCount++;
-
             var pic = (PictureBox)sender;
-            displayGuessCount();
-            displayAccuracy();
+            DisplayGuessCount();
+            DisplayAccuracy();
 
             if (firstGuess == null)
             {
@@ -185,16 +206,17 @@ namespace SuperheroMemoryGame_1_
             }
             pic.Image = (Image)pic.Tag;
 
+
             if (pic.Image == firstGuess.Image && pic != firstGuess)
             {
                 correctGuessCount++;
-                correctGuessCountText.Text = correctGuessCount.ToString();
+                label4.Text = correctGuessCount.ToString();
                 pic.Visible = firstGuess.Visible = false;
+
                 {
-                    
                     firstGuess = pic;
+
                 }
-              
 
                 HideImages();
             }
@@ -202,34 +224,37 @@ namespace SuperheroMemoryGame_1_
             {
                 allowClick = false;
                 clickTimer.Start();
-                
+
             }
-            
+
+
             firstGuess = null;
-            if (pictureBoxes.Any(p => p.Visible)) return;
+            if (PictureBoxes.Any(p => p.Visible)) { return; }
+            else { timer.Stop(); MessageBoxEndGame(); }
+
             //UPdate message box to give options
             //MessageBox.Show("You Win! Now Try Again?");
-            MessageBoxEndGame();
+            //MessageBoxEndGame();
+
 
             //ResetImages();
+
         }
 
 
         //Starts game
-        private void startGame(object sender, EventArgs e)
+        private void StartGame(object sender, EventArgs e)
         {
+
             allowClick = true;
-            setRandomImages();
+            SetRandomImages();
             HideImages();
-            startGameTimer();
+            StartGameTimer();
+
             clickTimer.Interval = 1000;
             clickTimer.Tick += CLICKTIMER_TICK;
             button1.Enabled = false;
 
-        }
-        //opens new start menu
-        
-
-
+        }   
     }
 }

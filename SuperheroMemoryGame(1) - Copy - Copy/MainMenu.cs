@@ -10,27 +10,25 @@ using System.Windows.Forms;
 
 namespace SuperheroMemoryGame_1_
 {
-    public partial class mainMenu : Form
+    public partial class MainMenu : Form
     {
 
-        public mainMenu()
+        public MainMenu()
         {
             InitializeComponent();
         }
 
-        private void buttonMediumLevel_Click(object sender, EventArgs e)
+        private void ButtonMediumLevel_Click(object sender, EventArgs e)
         {
-            
-            new mediumLevel().Show(); 
+            new MediumLevel().Show(); 
         }
 
-        private void buttonHardLevel_Click(object sender, EventArgs e)
-        {
-            
-            new hardLevel().Show(); 
+        private void ButtonHardLevel_Click(object sender, EventArgs e)
+        { 
+            new HardLevel().Show(); 
         }
 
-        private void buttonEasyLevel_Click(object sender, EventArgs e)
+        private void ButtonEasyLevel_Click(object sender, EventArgs e)
         {
             new EasyLevel().Show();
         }

@@ -16,7 +16,9 @@ namespace SuperheroMemoryGame_1_
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new mainMenu());
+            Application.Run(new MainMenu());
+             
+
         }
     }
 }

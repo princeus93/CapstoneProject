@@ -1,7 +1,7 @@
 ﻿
 namespace SuperheroMemoryGame_1_
 {
-    partial class mainMenu
+    partial class MainMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,7 @@ namespace SuperheroMemoryGame_1_
             this.buttonMediumLevel.TabIndex = 1;
             this.buttonMediumLevel.Text = "Medium";
             this.buttonMediumLevel.UseVisualStyleBackColor = true;
-            this.buttonMediumLevel.Click += new System.EventHandler(this.buttonMediumLevel_Click);
+            this.buttonMediumLevel.Click += new System.EventHandler(this.ButtonMediumLevel_Click);
             // 
             // buttonHardLevel
             // 
@@ -52,7 +52,7 @@ namespace SuperheroMemoryGame_1_
             this.buttonHardLevel.TabIndex = 2;
             this.buttonHardLevel.Text = "Hard";
             this.buttonHardLevel.UseVisualStyleBackColor = true;
-            this.buttonHardLevel.Click += new System.EventHandler(this.buttonHardLevel_Click);
+            this.buttonHardLevel.Click += new System.EventHandler(this.ButtonHardLevel_Click);
             // 
             // buttonEasyLevel
             // 
@@ -62,7 +62,7 @@ namespace SuperheroMemoryGame_1_
             this.buttonEasyLevel.TabIndex = 0;
             this.buttonEasyLevel.Text = "Easy";
             this.buttonEasyLevel.UseVisualStyleBackColor = true;
-            this.buttonEasyLevel.Click += new System.EventHandler(this.buttonEasyLevel_Click);
+            this.buttonEasyLevel.Click += new System.EventHandler(this.ButtonEasyLevel_Click);
             // 
             // mainMenu
             // 

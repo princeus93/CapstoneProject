@@ -52,11 +52,11 @@
     <Compile Include="EasyLevel.Designer.cs">
       <DependentUpon>EasyLevel.cs</DependentUpon>
     </Compile>
-    <Compile Include="MediumLevel%28TESTLEVEL%29.cs">
+    <Compile Include="MediumLevel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MediumLevel%28TESTLEVEL%29.Designer.cs">
-      <DependentUpon>MediumLevel%28TESTLEVEL%29.cs</DependentUpon>
+    <Compile Include="MediumLevel.Designer.cs">
+      <DependentUpon>MediumLevel.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -75,8 +75,8 @@
     <EmbeddedResource Include="EasyLevel.resx">
       <DependentUpon>EasyLevel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MediumLevel%28TESTLEVEL%29.resx">
-      <DependentUpon>MediumLevel%28TESTLEVEL%29.cs</DependentUpon>
+    <EmbeddedResource Include="MediumLevel.resx">
+      <DependentUpon>MediumLevel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
@@ -157,6 +157,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Wolverine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\AntManNew.png" />
+    <Content Include="Resources\ArrowNew.png" />
+    <Content Include="Resources\BlackPantherNew.png" />
+    <Content Include="Resources\CaptainAmericaNew.png" />
+    <Content Include="Resources\CaptainMarvelNew.png" />
+    <Content Include="Resources\DoctorStrangeNew.png" />
+    <Content Include="Resources\FlashNew.png" />
+    <None Include="Resources\Group.jpg" />
+    <Content Include="Resources\IronmanNew.png" />
+    <Content Include="Resources\VisionNew.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

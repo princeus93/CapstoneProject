@@ -7,29 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace SuperheroMemoryGame_1_
 {
-    public partial class hardLevel : Form
+    public partial class MediumLevel : Form
     {
-        public hardLevel()
-         {
-             InitializeComponent();
-         }
+        public MediumLevel()
+        {
+            InitializeComponent();
+        }
 
         bool allowClick = false;
         PictureBox firstGuess;
-        Random rnd = new Random();
-        Timer clickTimer = new Timer();
+        readonly Random rnd = new Random();
+        readonly Timer clickTimer = new Timer();
         int time = 60;
-        Timer timer = new Timer { Interval = 1000 };
+        readonly Timer timer = new Timer { Interval = 1000 };
 
-        private PictureBox[] pictureBoxes
+        private PictureBox[] PictureBoxes
         {
             get { return Controls.OfType<PictureBox>().ToArray(); }
         }
 
-        private static IEnumerable<Image> images
+        private static IEnumerable<Image> Images
         {
             get
             {
@@ -43,14 +44,14 @@ namespace SuperheroMemoryGame_1_
                     Properties.Resources.imgRobin,
                     Properties.Resources.imgSpiderman,
                     Properties.Resources.imgSuperman,
-                    Properties.Resources.Cyclops,
-                    Properties.Resources.Hawkeye
+                    //Properties.Resources.Cyclops,
+                    //Properties.Resources.Hawkeye
 
                 };
             }
         }
         //Game timer function
-        private void startGameTimer()
+        private void StartGameTimer()
         {
             timer.Start();
             timer.Tick += delegate
@@ -71,43 +72,43 @@ namespace SuperheroMemoryGame_1_
 
         private void ResetImages()
         {
-            foreach (var pic in pictureBoxes)
+            foreach (var pic in PictureBoxes)
             {
                 pic.Tag = null;
                 pic.Visible = true;
             }
             HideImages();
-            setRandomImages();
+            SetRandomImages();
             time = 60;
             timer.Start();
         }
 
         private void HideImages()
         {
-            foreach (var pic in pictureBoxes)
+            foreach (var pic in PictureBoxes)
             {
                 pic.Image = Properties.Resources.imgQuestionMark;
             }
         }
 
-        private PictureBox getFreeSlot()
+        private PictureBox GetFreeSlot()
         {
             int num;
 
             do
             {
-                num = rnd.Next(0, pictureBoxes.Count());
+                num = rnd.Next(0, PictureBoxes.Count());
             }
-            while (pictureBoxes[num].Tag != null);
-            return pictureBoxes[num];
+            while (PictureBoxes[num].Tag != null);
+            return PictureBoxes[num];
         }
 
-        private void setRandomImages()
+        private void SetRandomImages()
         {
-            foreach (var image in images)
+            foreach (var image in Images)
             {
-                getFreeSlot().Tag = image;
-                getFreeSlot().Tag = image;
+                GetFreeSlot().Tag = image;
+                GetFreeSlot().Tag = image;
             }
         }
 
@@ -119,7 +120,7 @@ namespace SuperheroMemoryGame_1_
             clickTimer.Stop();
         }
 
-        private void clickImage(object sender, EventArgs e)
+        private void ClickImage(object sender, EventArgs e)
         {
             if (!allowClick) return;
 
@@ -150,22 +151,22 @@ namespace SuperheroMemoryGame_1_
             }
 
             firstGuess = null;
-            if (pictureBoxes.Any(p => p.Visible)) return;
+            if (PictureBoxes.Any(p => p.Visible)) return;
             MessageBox.Show("You Win Now Try Again");
             ResetImages();
         }
         //Starts game
-        private void startGame(object sender, EventArgs e)
+        private void StartGame(object sender, EventArgs e)
         {
             allowClick = true;
-            setRandomImages();
+            SetRandomImages();
             HideImages();
-            startGameTimer();
+            StartGameTimer();
             clickTimer.Interval = 1000;
             clickTimer.Tick += CLICKTIMER_TICK;
             button1.Enabled = false;
         }
 
-        
+
     }
 }
