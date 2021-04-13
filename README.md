@@ -1,23 +1,23 @@
-#Matching Marvel Mania
+<h1> Matching Marvel Mania</h1>
 
 This is a simple matching game designed to entertain and train your brain. 
 
-##Table of Contents
+<h2>Table of Contents</h2>
 
 1. Installation
 2. Usage
 3. License
 
-##Installation
+<h2>Installation</h2>
 
 -This program runs on visual studio 
 -further instructions go here
 -and here
 
-##Usage
+<h2>Usage</h2>
 
 -usage instructions? 
 
-##License
+<h2>License</h2>
 
 -License goes here
