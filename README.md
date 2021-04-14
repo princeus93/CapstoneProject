@@ -1,6 +1,6 @@
 <h1> Matching Marvel Mania</h1>
 
-This is a simple matching game designed to entertain and train your brain. 
+This is a simple matching game designed to entertain. 
 
 <h2>Table of Contents</h2>
 
