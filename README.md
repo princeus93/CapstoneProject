@@ -1,12 +1,12 @@
 <h1> Matching Marvel Mania</h1>
 
-This is a simple matching game designed to entertain and train your brain. 
+This is a simple matching game designed to entertain. 
 
 <h2>Table of Contents</h2>
 
-1. Installation
-2. Usage
-3. License
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [License](#license)
 
 <h2>Installation</h2>
 
