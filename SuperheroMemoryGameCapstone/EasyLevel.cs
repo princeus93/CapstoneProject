@@ -67,9 +67,9 @@ namespace SuperheroMemoryGame_1_
                 if (time < 0)
                 {
                     timer.Stop();
-                    MessageBoxEndGame();
+                    MessageBoxLoseGame();
                     //MessageBox.Show("Out of time");
-                    ResetImages();
+                    //ResetImages();
                 }
 
                 var ssTime = TimeSpan.FromSeconds(time);
@@ -91,6 +91,8 @@ namespace SuperheroMemoryGame_1_
             timer.Start();
 
         }
+
+        
 
         private void HideImages()
         {
@@ -132,21 +134,48 @@ namespace SuperheroMemoryGame_1_
             clickTimer.Stop();
         }
 
-        //endgame textbox
-        private void MessageBoxEndGame()
+        private void MessageBoxLoseGame()
         {
 
-            string message = "Do you want to play again?";
+            string message = "Out of time! \n Would you like to try again?";
             string title = "Game Over";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
                 ResetImages();
+                label4.ResetText();
+                label3.ResetText();
+                label2.ResetText();
+                correctGuessCount = 0;
+                guessCount = 0;
             }
             else if (result == DialogResult.No)
             {
+                EasyLevel.ActiveForm.Close();
+                new MainMenu().Show();
+            }
+        }
 
+        //endgame textbox
+        private void MessageBoxWinGame()
+        {
+
+            string message = "You WIN! \n Do you want to play again?";
+            string title = "Game Won";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                ResetImages();
+                label4.ResetText();
+                label3.ResetText();
+                label2.ResetText();
+                correctGuessCount = 0;
+                guessCount = 0;
+            }
+            else if (result == DialogResult.No)
+            {
                 EasyLevel.ActiveForm.Close();
                 new MainMenu().Show();
             }
@@ -159,7 +188,7 @@ namespace SuperheroMemoryGame_1_
             if (gCount % 2 == 0)
             {
                 // gCount =  gCount / 2;
-                label2.Text = ((gCount/2)-cGCount).ToString();
+                label2.Text = (gCount/2).ToString();
             }
             else
             {
@@ -230,7 +259,7 @@ namespace SuperheroMemoryGame_1_
 
             firstGuess = null;
             if (PictureBoxes.Any(p => p.Visible)) { return; }
-            else { timer.Stop(); MessageBoxEndGame(); }
+            else { timer.Stop(); MessageBoxWinGame(); }
 
             //UPdate message box to give options
             //MessageBox.Show("You Win! Now Try Again?");
@@ -245,7 +274,6 @@ namespace SuperheroMemoryGame_1_
         //Starts game
         private void StartGame(object sender, EventArgs e)
         {
-
             allowClick = true;
             SetRandomImages();
             HideImages();
@@ -254,7 +282,6 @@ namespace SuperheroMemoryGame_1_
             clickTimer.Interval = 1000;
             clickTimer.Tick += CLICKTIMER_TICK;
             button1.Enabled = false;
-
         }   
     }
 }
