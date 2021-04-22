@@ -108,55 +108,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\img1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img6.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img7.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img8.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\question.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Beast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Cyclops.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DareDevil.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Fury.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Hawkeye.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Hulk%281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Thor.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Wolverine.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\AntManNew.png" />
@@ -166,9 +118,19 @@
     <Content Include="Resources\CaptainMarvelNew.png" />
     <Content Include="Resources\DoctorStrangeNew.png" />
     <Content Include="Resources\FlashNew.png" />
+    <None Include="Resources\NewQuestionMark.png" />
+    <None Include="Resources\NewWonderWoman.png" />
+    <None Include="Resources\NewCyclops.png" />
+    <None Include="Resources\NewDeadpool.png" />
+    <None Include="Resources\NewHulk.png" />
+    <None Include="Resources\NewIronMan.png" />
+    <None Include="Resources\NewLoki.png" />
+    <None Include="Resources\NewPepper.png" />
+    <None Include="Resources\NewSuperman.png" />
+    <None Include="Resources\NewUltron.png" />
+    <None Include="Resources\NewVision.png" />
     <None Include="Resources\Group.jpg" />
     <Content Include="Resources\IronmanNew.png" />
-    <Content Include="Resources\VisionNew.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

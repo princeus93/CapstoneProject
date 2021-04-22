@@ -24,6 +24,8 @@ namespace SuperheroMemoryGame_1_
         readonly Timer clickTimer = new Timer();
         int time = 60;
         readonly Timer timer = new Timer { Interval = 1000 };
+        double guessCount = 0;
+        double correctGuessCount = 0;
 
         private PictureBox[] PictureBoxes
         {
@@ -36,18 +38,61 @@ namespace SuperheroMemoryGame_1_
             {
                 return new Image[]
                 {
-                    Properties.Resources.imgBatman,
-                    Properties.Resources.imgCaptainAmerica,
-                    Properties.Resources.imgFlash,
-                    Properties.Resources.imgGreenLantern,
-                    Properties.Resources.imgIronMan,
-                    Properties.Resources.imgRobin,
-                    Properties.Resources.imgSpiderman,
-                    Properties.Resources.imgSuperman,
-                    //Properties.Resources.Cyclops,
-                    //Properties.Resources.Hawkeye
-
+                    Properties.Resources.AntManNew,
+                    Properties.Resources.CaptainAmericaNew,
+                    Properties.Resources.CaptainMarvelNew,
+                    Properties.Resources.ArrowNew,
+                    Properties.Resources.IronmanNew,
+                    Properties.Resources.DoctorStrangeNew,
+                    Properties.Resources.BlackPantherNew,
+                    Properties.Resources.NewVision
                 };
+            }
+        }
+        private void MessageBoxLoseGame()
+        {
+
+            string message = "Out of time! \n Would you like to try again?";
+            string title = "Game Over";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                ResetImages();
+                label4.ResetText();
+                label3.ResetText();
+                label2.ResetText();
+                correctGuessCount = 0;
+                guessCount = 0;
+            }
+            else if (result == DialogResult.No)
+            {
+                EasyLevel.ActiveForm.Close();
+                new MainMenu().Show();
+            }
+        }
+
+        //endgame textbox
+        private void MessageBoxWinGame()
+        {
+
+            string message = "You WIN! \n Do you want to play again?";
+            string title = "Game Won";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                ResetImages();
+                label4.ResetText();
+                label3.ResetText();
+                label2.ResetText();
+                correctGuessCount = 0;
+                guessCount = 0;
+            }
+            else if (result == DialogResult.No)
+            {
+                EasyLevel.ActiveForm.Close();
+                new MainMenu().Show();
             }
         }
         //Game timer function
@@ -60,8 +105,7 @@ namespace SuperheroMemoryGame_1_
                 if (time < 0)
                 {
                     timer.Stop();
-                    MessageBox.Show("Out of time");
-                    ResetImages();
+                    MessageBoxLoseGame();
                 }
 
                 var ssTime = TimeSpan.FromSeconds(time);
@@ -120,11 +164,38 @@ namespace SuperheroMemoryGame_1_
             clickTimer.Stop();
         }
 
+        public void DisplayGuessCount()
+        {
+            label2.Text = (guessCount / 2).ToString();
+        }
+
+        private void DisplayAccuracy()
+        {
+            // NumberFormatInfo nfi = new CultureInfo("en-US", false).NumberFormat;
+            double cGCount = correctGuessCount;
+            double gCount = guessCount;
+
+            double accuracyOfPicks;
+
+            if (cGCount < 1 || gCount < 1)
+            {
+                accuracyOfPicks = 0;
+            }
+            else
+            {
+                accuracyOfPicks = (cGCount / gCount) * 2;
+            }
+            label3.Text = accuracyOfPicks.ToString("P", CultureInfo.InvariantCulture);
+            
+        }
+
         private void ClickImage(object sender, EventArgs e)
         {
             if (!allowClick) return;
-
+            guessCount++;
             var pic = (PictureBox)sender;
+            DisplayGuessCount();
+            DisplayAccuracy();
 
             if (firstGuess == null)
             {
@@ -134,12 +205,16 @@ namespace SuperheroMemoryGame_1_
             }
             pic.Image = (Image)pic.Tag;
 
+
             if (pic.Image == firstGuess.Image && pic != firstGuess)
             {
-
+                correctGuessCount++;
+                label4.Text = correctGuessCount.ToString();
                 pic.Visible = firstGuess.Visible = false;
+
                 {
                     firstGuess = pic;
+
                 }
 
                 HideImages();
@@ -148,12 +223,13 @@ namespace SuperheroMemoryGame_1_
             {
                 allowClick = false;
                 clickTimer.Start();
+
             }
 
+
             firstGuess = null;
-            if (PictureBoxes.Any(p => p.Visible)) return;
-            MessageBox.Show("You Win Now Try Again");
-            ResetImages();
+            if (PictureBoxes.Any(p => p.Visible)) { return; }
+            else { timer.Stop(); MessageBoxWinGame(); }
         }
         //Starts game
         private void StartGame(object sender, EventArgs e)
@@ -162,11 +238,15 @@ namespace SuperheroMemoryGame_1_
             SetRandomImages();
             HideImages();
             StartGameTimer();
+
             clickTimer.Interval = 1000;
             clickTimer.Tick += CLICKTIMER_TICK;
             button1.Enabled = false;
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -124,9 +124,6 @@
   <data name="ArrowNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\arrownew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Beast" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Beast.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BlackPantherNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\blackpanthernew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,67 +133,52 @@
   <data name="CaptainMarvelNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\captainmarvelnew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cyclops" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cyclops.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DareDevil" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DareDevil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="DoctorStrangeNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\doctorstrangenew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlashNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\flashnew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Fury" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fury.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Group" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Group.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Hawkeye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Hawkeye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Hulk_1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Hulk(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imgBatman" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imgCaptainAmerica" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imgFlash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imgGreenLantern" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imgIronMan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imgQuestionMark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\question.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgRobin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imgSpiderman" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imgSuperman" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="IronmanNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\ironmannew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Thor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Thor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NewCyclops" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewCyclops.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="VisionNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\visionnew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NewDeadpool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewDeadpool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Wolverine" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Wolverine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NewHulk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewHulk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewIronMan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewIronMan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewLoki" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewLoki.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewPepper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewPepper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewQuestionMark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewQuestionMark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewSuperman" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewSuperman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewUltron" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewUltron.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewVision" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewVision.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewWonderWoman" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewWonderWoman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

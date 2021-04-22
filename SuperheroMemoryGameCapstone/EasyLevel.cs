@@ -32,27 +32,18 @@ namespace SuperheroMemoryGame_1_
             get { return Controls.OfType<PictureBox>().ToArray(); }
         }
 
-
-
         private static IEnumerable<Image> Images
         {
             get
             {
                 return new Image[]
                 {
-
                     Properties.Resources.CaptainAmericaNew,
                     Properties.Resources.AntManNew,
                     Properties.Resources.BlackPantherNew,
                     Properties.Resources.ArrowNew,
-                    Properties.Resources.VisionNew,
+                    Properties.Resources.NewVision,
                     Properties.Resources.IronmanNew
-                   /* Properties.Resources.imgBatman,
-                    Properties.Resources.imgCaptainAmerica,
-                    Properties.Resources.imgFlash,
-                    Properties.Resources.imgGreenLantern,
-                    Properties.Resources.imgIronMan,
-                    Properties.Resources.imgRobin */
                 };
             }
         }
@@ -96,9 +87,20 @@ namespace SuperheroMemoryGame_1_
 
         private void HideImages()
         {
-            foreach (var pic in PictureBoxes)
+            try
             {
-                pic.Image = Properties.Resources.imgQuestionMark;
+                foreach (var pic in PictureBoxes)
+                {
+                    pic.Image = Properties.Resources.NewQuestionMark;
+                }
+            } catch{
+                MessageBox.Show("error, restarting");
+                ResetImages();
+                label4.ResetText();
+                label3.ResetText();
+                label2.ResetText();
+                correctGuessCount = 0;
+                guessCount = 0;
             }
         }
 
@@ -134,6 +136,7 @@ namespace SuperheroMemoryGame_1_
             clickTimer.Stop();
         }
 
+        //Game lost message box
         private void MessageBoxLoseGame()
         {
 
@@ -157,12 +160,12 @@ namespace SuperheroMemoryGame_1_
             }
         }
 
-        //endgame textbox
+        //Game won message box
         private void MessageBoxWinGame()
         {
-
             string message = "You WIN! \n Do you want to play again?";
             string title = "Game Won";
+
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
@@ -183,12 +186,13 @@ namespace SuperheroMemoryGame_1_
 
         public void DisplayGuessCount()
         {
-            double cGCount = correctGuessCount;
-            double gCount = guessCount;
-            if (gCount % 2 == 0)
+            //double cGCount = correctGuessCount;
+            // gCount = guessCount;
+            if (guessCount % 2 == 0)
             {
+
                 // gCount =  gCount / 2;
-                label2.Text = (gCount/2).ToString();
+                label2.Text = (guessCount/2).ToString();
             }
             else
             {
@@ -201,7 +205,7 @@ namespace SuperheroMemoryGame_1_
         {
             // NumberFormatInfo nfi = new CultureInfo("en-US", false).NumberFormat;
             double cGCount = correctGuessCount;
-            double gCount = guessCount / 2;
+            double gCount = guessCount;
 
             double accuracyOfPicks;
 
@@ -213,7 +217,7 @@ namespace SuperheroMemoryGame_1_
             }
             else
             {
-                accuracyOfPicks = cGCount / gCount;
+                accuracyOfPicks = (cGCount / gCount) * 2;
             }
             label3.Text = accuracyOfPicks.ToString("P", CultureInfo.InvariantCulture);
             //return accuracyOfPicks;
@@ -258,16 +262,9 @@ namespace SuperheroMemoryGame_1_
 
 
             firstGuess = null;
+            //Checks for any visible pictures, returns if yes, else stops timer & displays Win 
             if (PictureBoxes.Any(p => p.Visible)) { return; }
             else { timer.Stop(); MessageBoxWinGame(); }
-
-            //UPdate message box to give options
-            //MessageBox.Show("You Win! Now Try Again?");
-            //MessageBoxEndGame();
-
-
-            //ResetImages();
-
         }
 
 
@@ -282,6 +279,11 @@ namespace SuperheroMemoryGame_1_
             clickTimer.Interval = 1000;
             clickTimer.Tick += CLICKTIMER_TICK;
             button1.Enabled = false;
-        }   
+        }
+
+        private void EasyLevel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
