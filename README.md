@@ -10,7 +10,8 @@ This is a simple matching game.
 
 <h2>Installation</h2>
 
--This program runs on Visual Studio 2019
+-This program requires [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) to run
+
 
 <h2>Usage</h2>
 
