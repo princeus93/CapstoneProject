@@ -19,6 +19,7 @@ First, the main screen prompts you to choose:
 <br/>-Easy
 <br/>-Medium
 <br/>-Hard
+<br/>
 Once in the chosen level you will have 60 seconds to accurately pair the cards.
 While in game you will be able to see your accuracy level change as the number of correct and incorrect guesses changes. 
 
