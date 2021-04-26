@@ -16,9 +16,9 @@ This is a simple matching game.
 <h2>Usage</h2>
 
 First, the main screen prompts you to choose:
--Easy 
--Medium
--Hard
+-Easy <\br> 
+-Medium <\br>
+-Hard \br>
 Once in the chosen level you will have 60 seconds to accurately pair the cards.
 While in game you will be able to see your accuracy level change as the number of correct and incorrect guesses changes. 
 
