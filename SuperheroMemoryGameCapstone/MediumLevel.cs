@@ -27,6 +27,7 @@ namespace SuperheroMemoryGame_1_
         double guessCount = 0;
         double correctGuessCount = 0;
 
+
         private PictureBox[] PictureBoxes
         {
             get { return Controls.OfType<PictureBox>().ToArray(); }
@@ -38,21 +39,21 @@ namespace SuperheroMemoryGame_1_
             {
                 return new Image[]
                 {
-                    Properties.Resources.AntManNew,
-                    Properties.Resources.CaptainAmericaNew,
                     Properties.Resources.CaptainMarvelNew,
-                    Properties.Resources.ArrowNew,
-                    Properties.Resources.IronmanNew,
-                    Properties.Resources.DoctorStrangeNew,
-                    Properties.Resources.BlackPantherNew,
-                    Properties.Resources.NewVision
+                    Properties.Resources.NewSuperman,
+                    Properties.Resources.NewArrow,
+                    Properties.Resources.NewDeadpool,
+                    Properties.Resources.NewGhostRider,
+                    Properties.Resources.NewHulk,
+                    Properties.Resources.NewHumanTorch,
+                    Properties.Resources.NewPepper,
                 };
             }
         }
         private void MessageBoxLoseGame()
         {
 
-            string message = "Out of time! \n Would you like to try again?";
+            string message = "Out of time! You scored: " + scoreLabel.Text +" points \n Would you like to try again?";
             string title = "Game Over";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
@@ -60,15 +61,16 @@ namespace SuperheroMemoryGame_1_
             {
                 ResetImages();
                 label4.ResetText();
-                label3.ResetText();
+                accuracyLabel.ResetText();
                 label2.ResetText();
+                scoreLabel.ResetText();
                 correctGuessCount = 0;
                 guessCount = 0;
             }
             else if (result == DialogResult.No)
-            {
-                EasyLevel.ActiveForm.Close();
-                new MainMenu().Show();
+            { 
+                MediumLevel.ActiveForm.Close();
+                MainMenu.ActiveForm.Show();
             }
         }
 
@@ -76,7 +78,7 @@ namespace SuperheroMemoryGame_1_
         private void MessageBoxWinGame()
         {
 
-            string message = "You WIN! \n Do you want to play again?";
+            string message = "You WIN! You scored: " + scoreLabel.Text + " points \n Do you want to play again?";
             string title = "Game Won";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
@@ -84,15 +86,17 @@ namespace SuperheroMemoryGame_1_
             {
                 ResetImages();
                 label4.ResetText();
-                label3.ResetText();
+                accuracyLabel.ResetText();
                 label2.ResetText();
+                scoreLabel.ResetText();
                 correctGuessCount = 0;
                 guessCount = 0;
             }
             else if (result == DialogResult.No)
             {
-                EasyLevel.ActiveForm.Close();
-                new MainMenu().Show();
+                
+                MediumLevel.ActiveForm.Close();
+                MainMenu.ActiveForm.Show();
             }
         }
         //Game timer function
@@ -129,10 +133,10 @@ namespace SuperheroMemoryGame_1_
 
         private void HideImages()
         {
-            foreach (var pic in PictureBoxes)
-            {
-                pic.Image = Properties.Resources.imgQuestionMark;
-            }
+                foreach (var pic in PictureBoxes)
+                {
+                    pic.Image = Properties.Resources.NewQuestionMark;
+                }        
         }
 
         private PictureBox GetFreeSlot()
@@ -166,27 +170,34 @@ namespace SuperheroMemoryGame_1_
 
         public void DisplayGuessCount()
         {
-            label2.Text = (guessCount / 2).ToString();
+
+            if (guessCount % 2 == 0)
+            {
+                label2.Text = (guessCount / 2).ToString();
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void DisplayAccuracy()
         {
-            // NumberFormatInfo nfi = new CultureInfo("en-US", false).NumberFormat;
-            double cGCount = correctGuessCount;
-            double gCount = guessCount;
+            float cGCount = Convert.ToInt32( correctGuessCount);
+            float gCount = Convert.ToInt32(guessCount);
 
-            double accuracyOfPicks;
+            float accuracyOfPicks;
 
             if (cGCount < 1 || gCount < 1)
             {
                 accuracyOfPicks = 0;
             }
-            else
+            else if(gCount % 2 == 0)
             {
                 accuracyOfPicks = (cGCount / gCount) * 2;
             }
-            label3.Text = accuracyOfPicks.ToString("P", CultureInfo.InvariantCulture);
-            
+            else { return; }
+            accuracyLabel.Text = accuracyOfPicks.ToString("P", CultureInfo.InvariantCulture);     
         }
 
         private void ClickImage(object sender, EventArgs e)
@@ -210,6 +221,7 @@ namespace SuperheroMemoryGame_1_
             {
                 correctGuessCount++;
                 label4.Text = correctGuessCount.ToString();
+                scoreLabel.Text = (correctGuessCount * 100).ToString();
                 pic.Visible = firstGuess.Visible = false;
 
                 {
@@ -242,11 +254,6 @@ namespace SuperheroMemoryGame_1_
             clickTimer.Interval = 1000;
             clickTimer.Tick += CLICKTIMER_TICK;
             button1.Enabled = false;
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+        }   
     }
 }

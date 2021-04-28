@@ -18,7 +18,7 @@ namespace SuperheroMemoryGame_1_
             InitializeComponent();
         }
 
-        private void ButtonMediumLevel_Click(object sender, EventArgs e)
+        /*private void ButtonMediumLevel_Click(object sender, EventArgs e)
         {
            // MainMenu.ActiveForm.Close();
             new MediumLevel().Show(); 
@@ -36,17 +36,9 @@ namespace SuperheroMemoryGame_1_
             new EasyLevel().Show();
             
             //MainMenu.ActiveForm.Close();
-        }
+        }*/
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void StartGame_Click(object sender, EventArgs e)
         {
@@ -65,9 +57,10 @@ namespace SuperheroMemoryGame_1_
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+      
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }

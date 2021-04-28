@@ -30,7 +30,7 @@ namespace SuperheroMemoryGame_1_
         private void MessageBoxLoseGame()
         {
 
-            string message = "Out of time! \n Would you like to try again?";
+            string message = "Out of time! You scored: " + scoreLabel.Text + " points \n Would you like to try again?";
             string title = "Game Over";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
@@ -38,15 +38,16 @@ namespace SuperheroMemoryGame_1_
             {
                 ResetImages();
                 label4.ResetText();
-                label3.ResetText();
+                accuracyLabel.ResetText();
                 label2.ResetText();
+                scoreLabel.ResetText();
                 correctGuessCount = 0;
                 guessCount = 0;
             }
             else if (result == DialogResult.No)
             {
                 HardLevel.ActiveForm.Close();
-                new MainMenu().Show();
+                MainMenu.ActiveForm.Show();
             }
         }
 
@@ -54,7 +55,7 @@ namespace SuperheroMemoryGame_1_
         private void MessageBoxWinGame()
         {
 
-            string message = "You WIN! \n Do you want to play again?";
+            string message = "You WIN! You scored: " + scoreLabel.Text +" points \n Do you want to play again?";
             string title = "Game Won";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
@@ -62,55 +63,49 @@ namespace SuperheroMemoryGame_1_
             {
                 ResetImages();
                 label4.ResetText();
-                label3.ResetText();
+                accuracyLabel.ResetText();
                 label2.ResetText();
+                scoreLabel.ResetText();
                 correctGuessCount = 0;
                 guessCount = 0;
             }
             else if (result == DialogResult.No)
             {
                 HardLevel.ActiveForm.Close();
-                new MainMenu().Show();
+                MainMenu.ActiveForm.Show();
             }
         }
 
         public void DisplayGuessCount()
         {
-            /*double cGCount = correctGuessCount;
-            double gCount = guessCount;
-            if (gCount % 2 == 0)
+
+            if (guessCount % 2 == 0)
             {
-                // gCount =  gCount / 2;
-                label2.Text = (gCount / 2).ToString();
+                label2.Text = (guessCount / 2).ToString();
             }
             else
             {
                 return;
-            }*/
-            
-             label2.Text = (guessCount/2).ToString(); 
+            }
         }
 
         private void DisplayAccuracy()
         {
-            // NumberFormatInfo nfi = new CultureInfo("en-US", false).NumberFormat;
-            double cGCount = correctGuessCount;
-            double gCount = guessCount;
+            float cGCount = Convert.ToInt32(correctGuessCount);
+            float gCount = Convert.ToInt32(guessCount);
 
-            double accuracyOfPicks;
+            float accuracyOfPicks;
 
-            //totalPicks = guessCount;
-            // correctPicks = correctGuessCount;
             if (cGCount < 1 || gCount < 1)
             {
                 accuracyOfPicks = 0;
             }
-            else
+            else if (gCount % 2 == 0)
             {
                 accuracyOfPicks = (cGCount / gCount) * 2;
             }
-            label3.Text = accuracyOfPicks.ToString("P", CultureInfo.InvariantCulture);
-            //return accuracyOfPicks;
+            else { return; }
+            accuracyLabel.Text = accuracyOfPicks.ToString("P", CultureInfo.InvariantCulture);
         }
 
 
@@ -131,11 +126,10 @@ namespace SuperheroMemoryGame_1_
                     Properties.Resources.NewPepper,
                     Properties.Resources.NewLoki,
                     Properties.Resources.NewDeadpool,
-                    Properties.Resources.NewWonderWoman,
-                    Properties.Resources.AntManNew,
-                    Properties.Resources.ArrowNew,
-                    Properties.Resources.NewHulk
-
+                    Properties.Resources.DoctorStrangeNew,
+                    Properties.Resources.NewGhostRider,
+                    Properties.Resources.NewArrow,
+                    Properties.Resources.NewHumanTorch
                 };
             }
         }
@@ -175,9 +169,23 @@ namespace SuperheroMemoryGame_1_
 
         private void HideImages()
         {
-            foreach (var pic in PictureBoxes)
+            try
             {
-                pic.Image = Properties.Resources.NewQuestionMark;
+                foreach (var pic in PictureBoxes)
+                {
+                    pic.Image = Properties.Resources.NewQuestionMark;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("error, restarting");
+                ResetImages();
+                label4.ResetText();
+                accuracyLabel.ResetText();
+                label2.ResetText();
+                scoreLabel.ResetText();
+                correctGuessCount = 0;
+                guessCount = 0;
             }
         }
 
@@ -232,6 +240,7 @@ namespace SuperheroMemoryGame_1_
             {
                 correctGuessCount++;
                 label4.Text = correctGuessCount.ToString();
+                scoreLabel.Text = (correctGuessCount * 100).ToString();
                 pic.Visible = firstGuess.Visible = false;
 
                 {
@@ -259,6 +268,7 @@ namespace SuperheroMemoryGame_1_
             SetRandomImages();
             HideImages();
             StartGameTimer();
+
             clickTimer.Interval = 1000;
             clickTimer.Tick += CLICKTIMER_TICK;
             button1.Enabled = false;

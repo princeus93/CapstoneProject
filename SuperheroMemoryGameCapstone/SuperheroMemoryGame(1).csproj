@@ -117,7 +117,13 @@
     <Content Include="Resources\CaptainAmericaNew.png" />
     <Content Include="Resources\CaptainMarvelNew.png" />
     <Content Include="Resources\DoctorStrangeNew.png" />
+    <None Include="Resources\NewGhostRider.png" />
+    <None Include="Resources\NewHumanTorch.png" />
+    <None Include="Resources\NewGhostRider" />
+    <None Include="Resources\NewHumanTorch" />
+    <None Include="Resources\epic_iron_160bpm_proud_music_preview.mp3" />
     <Content Include="Resources\FlashNew.png" />
+    <None Include="Resources\NewArrow.png" />
     <None Include="Resources\NewQuestionMark.png" />
     <None Include="Resources\NewWonderWoman.png" />
     <None Include="Resources\NewCyclops.png" />

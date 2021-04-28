@@ -31,24 +31,24 @@ namespace SuperheroMemoryGame_1_
         {
             get { return Controls.OfType<PictureBox>().ToArray(); }
         }
-
+       
         private static IEnumerable<Image> Images
         {
+            
             get
             {
                 return new Image[]
-                {
+                {    
                     Properties.Resources.CaptainAmericaNew,
                     Properties.Resources.AntManNew,
                     Properties.Resources.BlackPantherNew,
-                    Properties.Resources.ArrowNew,
-                    Properties.Resources.NewVision,
-                    Properties.Resources.IronmanNew
+                    Properties.Resources.IronmanNew,
+                    Properties.Resources.DoctorStrangeNew,
+                    Properties.Resources.FlashNew,
                 };
             }
         }
 
-        //Game timer function
         private void StartGameTimer()
         {
             timer.Start();
@@ -59,8 +59,6 @@ namespace SuperheroMemoryGame_1_
                 {
                     timer.Stop();
                     MessageBoxLoseGame();
-                    //MessageBox.Show("Out of time");
-                    //ResetImages();
                 }
 
                 var ssTime = TimeSpan.FromSeconds(time);
@@ -80,7 +78,6 @@ namespace SuperheroMemoryGame_1_
             SetRandomImages();
             time = 60;
             timer.Start();
-
         }
 
         
@@ -97,8 +94,9 @@ namespace SuperheroMemoryGame_1_
                 MessageBox.Show("error, restarting");
                 ResetImages();
                 label4.ResetText();
-                label3.ResetText();
+                accuracyLabel.ResetText();
                 label2.ResetText();
+                scoreLabel.ResetText();
                 correctGuessCount = 0;
                 guessCount = 0;
             }
@@ -117,15 +115,12 @@ namespace SuperheroMemoryGame_1_
         }
 
         private void SetRandomImages()
-        {
-            //do
-            // {
-            foreach (var image in Images)
-            {
-                GetFreeSlot().Tag = image;
-                GetFreeSlot().Tag = image;
-            }
-            // while (getFreeSlot().Tag == null);   
+        {    
+                foreach (var image in Images)
+                {
+                    GetFreeSlot().Tag = image;
+                    GetFreeSlot().Tag = image;
+                }       
         }
 
         private void CLICKTIMER_TICK(object sender, EventArgs e)
@@ -139,8 +134,7 @@ namespace SuperheroMemoryGame_1_
         //Game lost message box
         private void MessageBoxLoseGame()
         {
-
-            string message = "Out of time! \n Would you like to try again?";
+            string message = "Out of time! You scored: " + scoreLabel.Text + " points \n Would you like to try again?";
             string title = "Game Over";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
@@ -148,22 +142,23 @@ namespace SuperheroMemoryGame_1_
             {
                 ResetImages();
                 label4.ResetText();
-                label3.ResetText();
+                accuracyLabel.ResetText();
                 label2.ResetText();
+                scoreLabel.ResetText();
                 correctGuessCount = 0;
                 guessCount = 0;
             }
             else if (result == DialogResult.No)
             {
                 EasyLevel.ActiveForm.Close();
-                new MainMenu().Show();
+                MainMenu.ActiveForm.Show();
             }
         }
 
         //Game won message box
         private void MessageBoxWinGame()
         {
-            string message = "You WIN! \n Do you want to play again?";
+            string message = "You WIN! You scored: " + scoreLabel.Text + " points \n Do you want to play again?";
             string title = "Game Won";
 
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -172,55 +167,54 @@ namespace SuperheroMemoryGame_1_
             {
                 ResetImages();
                 label4.ResetText();
-                label3.ResetText();
+                accuracyLabel.ResetText();
                 label2.ResetText();
+                scoreLabel.ResetText();
                 correctGuessCount = 0;
                 guessCount = 0;
             }
             else if (result == DialogResult.No)
             {
                 EasyLevel.ActiveForm.Close();
-                new MainMenu().Show();
+                MainMenu.ActiveForm.Show();
             }
         }
 
+        
+
         public void DisplayGuessCount()
         {
-            //double cGCount = correctGuessCount;
-            // gCount = guessCount;
+
             if (guessCount % 2 == 0)
             {
-
-                // gCount =  gCount / 2;
                 label2.Text = (guessCount/2).ToString();
             }
             else
             {
                 return;
             }
-            // label2.Text = guessCount.ToString(); 
         }
 
+        //Accuracy method
+        //Returns percent accuracy of game play
+        //correct guesses diveded by total guesses
         private void DisplayAccuracy()
         {
-            // NumberFormatInfo nfi = new CultureInfo("en-US", false).NumberFormat;
-            double cGCount = correctGuessCount;
-            double gCount = guessCount;
+            float cGCount = Convert.ToInt32(correctGuessCount);
+            float gCount = Convert.ToInt32(guessCount);
 
-            double accuracyOfPicks;
+            float accuracyOfPicks;
 
-            //totalPicks = guessCount;
-            // correctPicks = correctGuessCount;
             if (cGCount < 1 || gCount < 1)
             {
                 accuracyOfPicks = 0;
             }
-            else
+            else if (gCount % 2 == 0)
             {
                 accuracyOfPicks = (cGCount / gCount) * 2;
             }
-            label3.Text = accuracyOfPicks.ToString("P", CultureInfo.InvariantCulture);
-            //return accuracyOfPicks;
+            else { return; }
+            accuracyLabel.Text = accuracyOfPicks.ToString("P", CultureInfo.InvariantCulture);
         }
 
         private void ClickImage(object sender, EventArgs e)
@@ -228,8 +222,9 @@ namespace SuperheroMemoryGame_1_
             if (!allowClick) return;
             guessCount++;
             var pic = (PictureBox)sender;
-            DisplayGuessCount();
-            DisplayAccuracy();
+            
+            DisplayGuessCount();  //Calls method to display guessCount 
+            DisplayAccuracy();  //Calls method to display the percent accuracy
 
             if (firstGuess == null)
             {
@@ -242,13 +237,14 @@ namespace SuperheroMemoryGame_1_
 
             if (pic.Image == firstGuess.Image && pic != firstGuess)
             {
-                correctGuessCount++;
+                correctGuessCount++; //adds 1 to correct guess count
                 label4.Text = correctGuessCount.ToString();
+                scoreLabel.Text = (correctGuessCount * 100).ToString(); //displays and calculates score 
+
                 pic.Visible = firstGuess.Visible = false;
 
                 {
                     firstGuess = pic;
-
                 }
 
                 HideImages();
@@ -257,14 +253,20 @@ namespace SuperheroMemoryGame_1_
             {
                 allowClick = false;
                 clickTimer.Start();
-
             }
 
-
             firstGuess = null;
+
             //Checks for any visible pictures, returns if yes, else stops timer & displays Win 
-            if (PictureBoxes.Any(p => p.Visible)) { return; }
-            else { timer.Stop(); MessageBoxWinGame(); }
+            if (PictureBoxes.Any(p => p.Visible)) 
+            {
+                return; 
+            }
+            else 
+            { 
+                timer.Stop();  //Stops timer when all heross are correctly paired
+                MessageBoxWinGame();  //Calls method when all heros are correctly paired
+            }
         }
 
 
@@ -281,9 +283,6 @@ namespace SuperheroMemoryGame_1_
             button1.Enabled = false;
         }
 
-        private void EasyLevel_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

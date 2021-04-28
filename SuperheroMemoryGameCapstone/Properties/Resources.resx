@@ -121,8 +121,8 @@
   <data name="AntManNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\antmannew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ArrowNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\arrownew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BackgroundMusic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\epic_iron_160bpm_proud_music_preview.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="BlackPantherNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\blackpanthernew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,14 +148,23 @@
   <data name="IronmanNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\ironmannew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="NewArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewArrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="NewCyclops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewCyclops.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NewDeadpool" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewDeadpool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="NewGhostRider" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewGhostRider.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="NewHulk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewHulk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewHumanTorch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewHumanTorch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NewIronMan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewIronMan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
