@@ -10,7 +10,8 @@ This is a simple matching game.
 
 <h2>Installation</h2>
 
--This program requires [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) to run
+-This program requires [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) to run.
+-After installing *Visual Studio 2019*, it is possible to download and pull up the game file through the "Play Game" folder.
 
 
 <h2>Usage</h2>
@@ -20,7 +21,7 @@ First, the main screen prompts you to choose:
 <br/>-Medium
 <br/>-Hard
 <br/>
-Once in the chosen level you will have 60 seconds to accurately pair the cards.
+Once in the chosen level you will have 60 seconds to accurately pair the cards. The easy level is a 3x4 grid, 
 While in game you will be able to see your accuracy level change as the number of correct and incorrect guesses changes. 
 
 <h2>License</h2>
