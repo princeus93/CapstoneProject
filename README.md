@@ -10,7 +10,7 @@ This is a simple matching game.
 
 <h2>Installation</h2>
 
--This program requires [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) to run.
+-This program requires [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) to run. <br/>
 -After installing *Visual Studio 2019*, it is possible to download and pull up the game file through the "Play Game" folder.
 
 
