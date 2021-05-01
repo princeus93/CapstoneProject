@@ -11,7 +11,7 @@ This is a simple matching game.
 <h2>Installation</h2>
 
 -This program requires [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) to run. <br/>
--After installing *Visual Studio 2019*, it is possible to download and pull up the game file through the "Play Game" folder.
+-After installing *Visual Studio 2019*, download link to program and open up executable in the bin file folder.
 
 
 <h2>Usage</h2>
