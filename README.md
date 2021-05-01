@@ -1,4 +1,5 @@
 <h1> Matching Marvel Mania</h1>
+Superhero pairing game. Test your memory.
 
 <h2>Table of Contents</h2>
 1. [About](#about)
