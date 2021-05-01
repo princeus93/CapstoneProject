@@ -2,10 +2,10 @@
 Superhero pairing game. Test your memory.
 
 <h2>Table of Contents</h2></br>
-1.About</br>
-2.Installation</br>
-3.Usage</br>
-4.License</br>
+1.[About](#about)</br>
+2.[Installation](#installation)</br>
+3.[Usage](#usage)</br>
+4.[License](#license)</br>
 
 <h2>About</h2>
 This is a simple matching game. Thanks to https://www.mooict.com/c-tutorial-create-a-superhero-memory-game/ we were able to take and expand upon a great matching game. With some update graphics, better functionality and easy of player use has made this a must play game.  
