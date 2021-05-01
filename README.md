@@ -1,6 +1,4 @@
 <h1> Matching Marvel Mania</h1>
-![image](https://user-images.githubusercontent.com/69991982/116770582-b18af180-aa0a-11eb-894d-d0ceb1a7d572.png)
-Format: ![Alt Text](url)
 Superhero pairing game. Test your memory.
 
 <h2>Table of Contents</h2></br>
