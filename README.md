@@ -1,7 +1,7 @@
 <h1> Matching Marvel Mania</h1
 Superhero pairing game. Test your memory.
 
-<h2>Table of Contents</h2>
+<h2>Table of Contents</h2></br>
 1.About</br>
 2.Installation</br>
 3.Usage</br>
