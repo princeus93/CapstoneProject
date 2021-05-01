@@ -7,7 +7,7 @@ Superhero pairing game. Test your memory.
 3.[Usage](#usage)
 4.[License](#license)
 
-#About
+<h2>About</h2>
 This is a simple matching game. Thanks to https://www.mooict.com/c-tutorial-create-a-superhero-memory-game/ we were able to take and expand upon a great matching game. With some update graphics, better functionality and easy of player use has made this a must play game.  
 Below is the code snippet to how the accuracy calculates and displays.
 
