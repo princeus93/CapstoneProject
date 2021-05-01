@@ -1,17 +1,38 @@
 <h1> Matching Marvel Mania</h1>
 
-This is a simple matching game.
-
 <h2>Table of Contents</h2>
+1. [About](#about)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [License](#license)
 
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [License](#license)
+<h2>About</h2>
+This is a simple matching game. Thanks to https://www.mooict.com/c-tutorial-create-a-superhero-memory-game/ we were able to take and expand upon a great matching game. With some update graphics, better functionality and easy of player use has made this a must play game.  
+Below is the code snippet to how the accuracy calculates and displays.
+
+        private void DisplayAccuracy()
+        {
+            float cGCount = Convert.ToInt32(correctGuessCount);
+            float gCount = Convert.ToInt32(guessCount);
+
+            float accuracyOfPicks;
+
+            if (cGCount < 1 || gCount < 1)
+            {
+                accuracyOfPicks = 0;
+            }
+            else if (gCount % 2 == 0)
+            {
+                accuracyOfPicks = (cGCount / gCount) * 2;
+            }
+            else { return; }
+            accuracyLabel.Text = accuracyOfPicks.ToString("P", CultureInfo.InvariantCulture);
+        }
 
 <h2>Installation</h2>
 
 -This program requires [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) to run. <br/>
--After installing *Visual Studio 2019*, download link to program and open up executable in the bin file folder.
+-After installing **Visual Studio 2019**, download link to program and open up executable in the bin file folder.
 
 
 <h2>Usage</h2>
