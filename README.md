@@ -1,11 +1,13 @@
-<h1> Matching Marvel Mania</h1
+<h1> Matching Marvel Mania</h1>
+![image](https://user-images.githubusercontent.com/69991982/116770582-b18af180-aa0a-11eb-894d-d0ceb1a7d572.png)
+Format: ![Alt Text](url)
 Superhero pairing game. Test your memory.
 
 <h2>Table of Contents</h2></br>
-1.[About](#about)</br>
-2.[Installation](#installation)</br>
-3.[Usage](#usage)</br>
-4.[License](#license)</br>
+1.About</br>
+2.Installation</br>
+3.Usage</br>
+4.License</br>
 
 <h2>About</h2>
 This is a simple matching game. Thanks to https://www.mooict.com/c-tutorial-create-a-superhero-memory-game/ we were able to take and expand upon a great matching game. With some update graphics, better functionality and easy of player use has made this a must play game.  
